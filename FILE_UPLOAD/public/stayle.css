@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 30px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Forms */
+  form {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    max-width: 500px;
+    margin-inline: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  }
+  
+  button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #1e40af;
+  }
+  
+  /* Gallery grid */
+  .gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Card */
+  .gallery-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-6px);
+  }
+  
+  /* Image */
+  .gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.1)
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Delete button */
+  .delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 0, 0, 0.85);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transform: scale(0);
+    transition: transform 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gallery-item:hover .delete-btn {
+    transform: scale(1);
+  }
+  
+  .delete-btn:hover {
+    background: red;
+  }
+  
